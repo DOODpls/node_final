@@ -1,0 +1,63 @@
+@import url('./template.css');
+
+.main-cont{
+  justify-content: space-evenly;
+}
+
+.alsub{
+  position: relative;
+  width: auto;
+  font-family: 'Share Tech Mono', monospace;
+  font-size:100px;
+  color: #fae100;
+  font-weight: 400;
+  text-shadow: 1px 0px 4px #d2d45b, 2px 0px 4px #d2d45b, 3px 0px 4px #d2d45b, 2px 0px 3px #978e0c, 2px 3px 15px #978e0c, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #978e0c,40px 0vw 200px #978e0c;
+  text-align: center;
+}
+
+@media screen and (max-width: 380px) {
+  .alsub{
+    font-size: 25vw;
+  }
+}
+/* @-webkit-keyframes neon1 {
+  from {
+    text-shadow: 1px 0px 4px #d2d45b, 2px 0px 4px #d2d45b, 3px 0px 4px #d2d45b, 2px 0px 3px #978e0c, 2px 3px 15px #978e0c, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #978e0c,40px 0vw 200px #978e0c;
+  }
+  to {
+    text-shadow: 1px 0px 4px #d2d45b, 1px 0px 2px #d2d45b, 1.5px 0px 2px #d2d45b, 1.5px 0px 1.5px #978e0c, 1px 1.5px 7.5px #978e0c, 1px 0px 7.5px, 2.5px 0px 62px, 10px 0vw 100px #978e0c,20px 0vw 100px #978e0c;
+  }
+} */
+
+.exit{
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 50px;
+  width: 120px;
+  border: 1px solid #51ee66;
+  box-shadow: inset 2px 2px 4px #51ee66, 0px 0px 4px #51ee66, inset -2px -2px 4px #51ee66, 2px 0px 3px #007514, 2px 3px 15px #007514, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #007514,40px 0vw 200px #007514, inset 2px 0vw 30px #007514;
+}
+a{
+  text-decoration: none;
+}
+.signexit{
+  color: #c24c4c;
+  text-shadow: 1px 0px 4px #c24c4c, 2px 0px 4px #c24c4c, 3px 0px 4px #c24c4c, 2px 0px 3px #860000, 2px 3px 15px #860000, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #860000,40px 0vw 200px #860000;
+  animation: flicker 3s linear infinite;
+}
+.exit{
+  animation: flicker 1s linear infinite;
+}
+@keyframes flicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: .99;
+		
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.4;
+	}
+}

@@ -1,0 +1,49 @@
+@import url('./template.css');
+.main-cont{
+  justify-content: space-around;
+}
+.not-found{
+  position: relative;
+  width: auto;
+  font-family: 'Share Tech Mono', monospace;
+  font-size:70px;
+  color: #eba05a;
+  font-weight: 400;
+  text-shadow: 1px 0px 4px #eba05a, 2px 0px 4px #eba05a, 3px 0px 4px #eba05a, 2px 0px 3px #925800, 2px 3px 15px #925800, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #925800,40px 0vw 200px #925800;
+  text-align: center;
+  transform: rotate(10deg);
+}
+
+
+.exit{
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 50px;
+  width: 120px;
+  border: 1px solid #51ee66;
+  box-shadow: inset 2px 2px 4px #51ee66, 0px 0px 4px #51ee66, inset -2px -2px 4px #51ee66, 2px 0px 3px #007514, 2px 3px 15px #007514, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #007514,40px 0vw 200px #007514, inset 2px 0vw 30px #007514;
+}
+a{
+  text-decoration: none;
+}
+.signexit{
+  color: #c24c4c;
+  text-shadow: 1px 0px 4px #c24c4c, 2px 0px 4px #c24c4c, 3px 0px 4px #c24c4c, 2px 0px 3px #860000, 2px 3px 15px #860000, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #860000,40px 0vw 200px #860000;
+  animation: flicker 3s linear infinite;
+}
+.exit{
+  animation: flicker 1s linear infinite;
+}
+@keyframes flicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: .99;
+		
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.4;
+	}
+}
