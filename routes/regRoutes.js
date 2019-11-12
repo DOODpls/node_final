@@ -2,6 +2,7 @@ const express = require('express');
 const pgroutr = express.Router();
 const Usrchma = require('../models/usrschema');
 const pages = require('../pages');
+const bcrypt = require('bcryptjs');
 const app = express();
 
 pgroutr.post('/', function(request, response){
@@ -18,7 +19,7 @@ pgroutr.post('/', function(request, response){
       return false
     }
   }
-
+  
   console.log(ovr())
   const newuser = new Usrchma(
     {
@@ -29,20 +30,27 @@ pgroutr.post('/', function(request, response){
     }
   );
 
-  var obj = {emaill: email, passwr: passw, title: pages.registered.title}
+  
+  bcrypt.genSalt(10, (err, salt) => 
+      bcrypt.hash(newuser.password, salt, (err, hash) => {
+        if(err) throw err;
+        newuser.password = hash;
+        var obj = {emaill: email, passwr: passw, title: pages.registered.title}
+        Usrchma.find({'email': request.body.emailreg}, (err, docs) => {
+          if (!docs.length){
+            newuser.save(function (err, newuser){
+              if (err) return response.render('error', pages.error);
+              console.log('document added to collection')
+              response.render("registered",obj)
+            })
+          }else{                
+              console.log('EMAIL ALREADY SUBBED', request.body.emailreg);
+              response.render('alreadysub', pages.alreadysub);
+          }
+      });
 
-  Usrchma.find({'email': request.body.emailreg}, (err, docs) => {
-      if (!docs.length){
-        newuser.save(function (err, newuser){
-          if (err) return response.render('error', pages.error);
-          console.log('document added to collection')
-          response.render("registered",obj)
-        })
-      }else{                
-          console.log('EMAIL ALREADY SUBBED', request.body.emailreg);
-          response.render('alreadysub', pages.alreadysub);
-      }
-  });
+    }))
+  
 })
   
 
@@ -63,7 +71,15 @@ pgroutr.post('/', function(request, response){
 //   }
 
 //   if(error.length > 0){
-     
+//      response.render('registered', {
+//       error,
+//       name,
+//       email,
+//       passw,
+//       passw2
+//     })
+//   } else {
+    
 //   }
 // })
   

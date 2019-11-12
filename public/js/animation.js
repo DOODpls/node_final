@@ -8,7 +8,7 @@ let subreg = document.querySelector('#subreg');
 let loginst = document.querySelector('#loginst');
 let regist = document.querySelector('#regist');
 let name = document.querySelector('#name');
-
+let emailreg = document.querySelector('#emailreg');
 
 loginst.disabled = true;
 regist.disabled = false;
@@ -20,12 +20,16 @@ function same(){
   }else if(password.value == '' && reppas.value == ''){
     subreg.className = 'subreg2'
     subreg.disabled = true;
+    alert('complete all fields');
+  }else if(password.value.length < 8 && reppas.value.length < 8){
+    subreg.className = 'subreg2'
+    subreg.disabled = true;
+    alert('Password must be morethan 8 characters');
   } else {
     subreg.className = 'subreg3'
     subreg.disabled = false;
   }
 }
-
 password.addEventListener('keyup', same);
 reppas.addEventListener('keyup', same);
 
