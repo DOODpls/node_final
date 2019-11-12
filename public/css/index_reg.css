@@ -49,9 +49,6 @@ fieldset{
     font-size: 25vw;
   }
 }
-
-
-
 /* .bannern{
   font-family: 'Share Tech Mono', monospace;
   font-size: 100px;
@@ -88,25 +85,21 @@ fieldset{
   }
 } */
 .login{
-  display: block;
-  opacity: 1;
+  display: none;
   transition: 2s;
 }
 .registration{
   display: block;
-  opacity: 0;
   transition: 2s;
 }
 .login2{
-  display: none;
-  opacity: 0;
+  display: block;
   transition: 2s;
 }
-/* .registration2{
-  display: block;
-  opacity: 1;
+.registration2{
+  display: none;
   transition: 2s;
-} */
+}
 .regbutt{
   color: white;
 }
@@ -120,6 +113,8 @@ body {
   margin: auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .subreg{
   color: white;
@@ -137,7 +132,10 @@ body {
   width: auto;
   text-shadow: 1px 0px 4px #228ce2, 2px 0px 4px #228ce2, 3px 0px 4px #228ce2, 2px 0px 3px #2610a1, 2px 3px 15px #2610a1, 2px 0px 15px, 5px 0px 125px, 20px 0vw 200px #2610a1,40px 0vw 200px #2610a1;
 }
-
+.hvacc{
+  font-family: 'Share Tech Mono', monospace;
+  color: rgba(255, 255, 255, 0.568);
+}
 .checkboxdiv{
   top: 30px;
   width: 100%;

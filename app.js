@@ -3,7 +3,8 @@ require('dotenv').config()
 const pages = require('./pages');
 const express = require('express');
 const path = require('path');
-const pgroutr = require('./routes/webRoutes');
+const regroutr = require('./routes/regRoutes');
+const logroutr = require('./routes/logRoutes');
 
 const app = express();
 mongoose.connect(process.env.DB_CONNECTION, { useUnifiedTopology: true,useNewUrlParser: true });
@@ -30,8 +31,17 @@ app.get('/', function(request, response){
 //   response.render('error', pages.error)
 // })
 
-app.use('/registered', pgroutr);
-// app.use('/profile', pgroutr);
+app.use('/registered', regroutr);
+app.use('/profile', logroutr);
+// app.use(session({
+//   secret: "secret",
+//   resave: false,
+//   saveUninitialized: true,
+//   cookie: {secure: true,
+//       httpOnly: true,
+//       maxAge: 1000 * 60 * 60 * 24
+//   }
+// }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -1,7 +1,7 @@
 let loginn = document.querySelector('#loginst');
 let regg = document.querySelector('#regist');
 let regbut = document.querySelector('.regbutt');
-let logbutt = document.querySelector('.logbutt');
+let logbutt = document.querySelector('.hvacc');
 let password = document.querySelector('#passwordreg');
 let reppas = document.querySelector('#reppass');
 let subreg = document.querySelector('#subreg');
@@ -10,7 +10,8 @@ let regist = document.querySelector('#regist');
 let name = document.querySelector('#name');
 
 
-
+loginst.disabled = true;
+regist.disabled = false;
 
 function same(){
   if (password.value != reppas.value){
@@ -24,9 +25,6 @@ function same(){
     subreg.disabled = false;
   }
 }
-
-
-
 
 password.addEventListener('keyup', same);
 reppas.addEventListener('keyup', same);
@@ -74,27 +72,28 @@ function randomLetter(value, idlabel){
     block = "";
   }
   };
-// haha("Email", "label1");
-// haha("Password", "label2");
+randomLetter("Email", "label1");
+randomLetter("Password", "label2");
 randomLetter("Email", "regemail");
 randomLetter("Password", "regpw");
 randomLetter("Repeat Password", "regreppw");
 randomLetter("Name", "regname");
-// regbut.addEventListener('click', function(){
-//   loginn.className = 'login2';
-//   regg.className = 'registration2';
-//   randomLetter("Email", "regemail");
-//   randomLetter("Password", "regpw");
-//   randomLetter("Repeat Password", "regreppw");
-//   loginst.disabled = true;
-//   regist.disabled = false;
-// })
 
-// logbutt.addEventListener('click', function(){
-//   loginn.className = 'login';
-//   regg.className = 'registration';
-//   haha("Email", "label1");
-//   haha("Password", "label2");
-//   loginst.disabled = false;
-//   regist.disabled = true;
-// })
+regbut.addEventListener('click', function(){
+  loginn.className = 'login';
+  regg.className = 'registration';
+  randomLetter("Email", "regemail");
+  randomLetter("Password", "regpw");
+  randomLetter("Repeat Password", "regreppw");
+  loginst.disabled = true;
+  regist.disabled = false;
+})
+
+logbutt.addEventListener('click', function(){
+  loginn.className = 'login2';
+  regg.className = 'registration2';
+  randomLetter("Email", "label1");
+  randomLetter("Password", "label2");
+  loginst.disabled = false;
+  regist.disabled = true;
+})

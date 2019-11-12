@@ -8,6 +8,7 @@ pgroutr.post('/', function(request, response){
   const email = request.body.emailreg;
   const passw = request.body.passwordreg;
   const over18 = request.body.checkbox2;
+  const passw2 = request.body.reppass;
   const name = request.body.name;
 
   const ovr = () =>{
@@ -42,33 +43,30 @@ pgroutr.post('/', function(request, response){
           response.render('alreadysub', pages.alreadysub);
       }
   });
-    
 })
   
 
-
 // pgroutr.post('/', function(request, response){
-//   const emailog = request.body.email;
-//   const passwlog = request.body.password;
-//   console.log(emailog)
-//   const loginuser = new Usrchma(
-//     {
-//       email: emailog,
-//       password: passwlog,
-//       status: 'online'
-//     }
-//   );
-//   var self = this;
-//   var obj = {emaill: emailog}
+//   const { name, email, passw, passw2 } = request.body;
+//   let error =[];
 
-//   Usrchma.find({'email': self.email, 'password': self.password}, function (err, docs) {
-//     if (!self.email){
-//         console.log('account not found')
-//     }else{                
-//       console.log('user exists: ',self.email);
-//         response.render("profile", obj)
-//     }
-// });
+//   if(!name || !mail || !passw || !passw2){
+//     error.push({msg: "Please fill all fields"});
+//   }
+
+//   if(passw !== passw2){
+//     error.push({msg: 'Password do not match'});
+//   }
+
+//   if(passw.length < 8){
+//     error.push({ msg: 'Password must be atleast 6 characters'});
+//   }
+
+//   if(error.length > 0){
+     
+//   }
 // })
+  
+
 
 module.exports = pgroutr;
