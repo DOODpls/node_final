@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include partials/header %>
+<body>
+  <div class="main-cont">
+      <a href="/" class="btn btn-secondary">Logout</a>
+    <div>
+      <h1 name='userna' ><%= user.username %></h1>
+    </div>
+    <form class="form-container">
+      <div class="form-group row">
+        <div class="col-8">
+          <input id="blog-title" name="blog-title" placeholder="Blog Title" type="text" class="form-control" required="required">
+        </div>
+      </div>
+      <div class="form-group row">
+          <div class="col-8">
+            <input type="date" name="dateofbirth" id="dateofbirth">
+          </div>
+        </div>
+      <div class="form-group row">
+        <div class="col-8">
+          <textarea id="blog-content" name="blog-content" placeholder="Blog Content" cols="40" rows="5" class="form-control" required="required"></textarea>
+        </div>
+      </div> 
+      <div class="form-group row">
+        <div class="offset-6 col-8">
+          <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

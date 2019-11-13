@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include partials/header %>
+<body>
+  <div class="main-cont">
+      <h1 class="neon" data-text="U"><div>CO<span class="flicker-slow">M</span>ING_</div><div>SOO<span class="flicker-fast">N</span></div></h1>
+      
+    <% include ./partials/errors %>
+    <!-- COMING SOON -->
+    <form method="post" class="postform" id="postform">
+      <fieldset class="login" id="loginst">
+        <div id="logs">
+          <div class="group">
+            <input id="email" type="email" name="email" required>
+            <label for="email" id="label1">Email</label>
+            <div class="bar"></div>
+          </div>
+          <div class="group">
+              <input id="password" type="password" name="password" required>
+              <label for="password"id="label2">Password</label>
+              <div class="bar"></div>
+            </div>
+          <div class="submitdiv">
+            <input type="submit" value="LOGIN" id="sub" formaction="profile">
+            <p class="regbutt">registration</p>
+          </div>
+        </div>
+      </fieldset>
+      <br/>
+      <fieldset class="registration" id="regist">
+        <div id="logs">
+            <div class="group">
+                <input id="name" type="text" name="name" required>
+                <label for="name" id="regname">Name</label>
+                <div class="bar"></div>
+              </div>
+            <div class="group">
+                <input id="username" type="text" name="username" required>
+                <label for="uername" id="reguser">Name</label>
+                <div class="bar"></div>
+              </div>
+          <div class="group">
+            <input id="emailreg" type="email" name="emailreg" required>
+            <label for="email" id="regemail">Email</label>
+            <div class="bar"></div>
+          </div>
+          <div class="group">
+              <input id="passwordreg" type="password" name="passwordreg" required>
+              <label for="passwordreg"id="regpw">Password</label>
+              <div class="bar"></div>
+            </div>
+            <div class="group">
+                <input id="reppass" type="password" name="reppass" required>
+                <label for="reppass"id="regreppw">Repeat Password</label>
+                <div class="bar"></div>
+            </div>
+            <div class="checkboxdiv">
+                <p class="cklabel">Are you over 18?</p><input type="checkbox" id="checks" class="checkbx" name="checkbox2" value='true'>
+            </div>
+          <div class="submitdiv">
+            <input type="submit" value="REGISTER" id="subreg" formaction="registered" class="subreg">
+            <p class="hvacc">Already an have Account?</p>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</body>
+<script src="js/animation.js"></script>
+</html>
