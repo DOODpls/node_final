@@ -36,7 +36,9 @@ app.use(passport.session());
 
 app.use(flash());
 
-app.use('/', require('./routes/index.js'));
+app.get('/', function(request, response){
+  response.render('index', pages.index)
+})
 // app.get('/alreadyssubbed', function(request, response){
 //   response.render('alreadysub', pages.alreadysub)
 // })

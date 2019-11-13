@@ -39,7 +39,7 @@ pgroutr.post('/', (req, res, next) => {
   const emailog = req.body.email;
   var obj = {emaill: emailog}
   passport.authenticate('local', {
-    successRedirect: '/profile',
+    successRedirect: res.render('profile', obj),
     failureRedirect: '/'
   })(req, res, next);
 

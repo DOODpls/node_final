@@ -6,7 +6,7 @@ const path = require('path');
 const flash = require('connect-flash')
 const session = require('express-session')
 const regroutr = require('./routes/regRoutes');
-const logroutr = require('./routes/logRoutes');
+const index = require('./routes/index');
 const passport = require('passport');
 const app = express();
 
@@ -36,7 +36,9 @@ app.use(passport.session());
 
 app.use(flash());
 
-app.use('/', require('./routes/index.js'));
+app.get('/', function(request, response){
+  response.render('index', pages.index)
+})
 // app.get('/alreadyssubbed', function(request, response){
 //   response.render('alreadysub', pages.alreadysub)
 // })
@@ -46,7 +48,7 @@ app.use('/', require('./routes/index.js'));
 
 app.use('/registered', regroutr);
 // regroutr.get('/profile', (req, res) => res.render('profile'));
-app.use('/profile', logroutr);
+app.use('/profile', index);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -25,11 +25,13 @@ db.once('open', function() {
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }))
 
+app.set('trust proxy', 1) // trust first proxy
 app.use(session({
-  secret: 'secret',
-  resave: true,
+  secret: 'keyboard cat',
+  resave: false,
   saveUninitialized: true,
-}));
+  cookie: { secure: true }
+}))
 
 app.use(passport.initialize());
 app.use(passport.session());
