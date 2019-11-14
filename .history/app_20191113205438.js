@@ -37,16 +37,16 @@ app.use(passport.session());
 app.use(flash());
 
 app.use('/', require('./routes/index.js'));
-app.use('/profile/newblog', require('./routes/index.js'));
+
 app.use('/registered', regroutr);
 // regroutr.get('/profile', (req, res) => res.render('profile'));
 app.use('/profile', logroutr);
 
 const blgschema = require('./models/blogschema');
 
-app.post('/profile/sucess', function(request, response){
+app.post('/', function(request, response){
   
-  const usern = request.user.username
+  const usern = 'sdfsdfds'
   const title = request.body.title;
   const dated = request.body.date;
   const contnet = request.body.blogcont;

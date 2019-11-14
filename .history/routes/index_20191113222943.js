@@ -9,10 +9,9 @@ res.render('index', pages.index));
 
 pgroutr.get('/profile', ensureAuthenticated, async function(req, res){
 
-  const blogl = await blgschema.find({username: req.user.username});
-  console.log(blogl)
+  const blogl = await blgschema.find({});
   res.render('profile', {
-    usrblg: blogl,
+    blogl: blogl,
     user: req.user,
     title: pages.profile.title,
     csslk: pages.profile.csslk

@@ -3,7 +3,6 @@
 <%- include partials/header %>
 <body>
   <div class="main-cont">
-    <div class="inner-container">
       <a href="/" class="btn btn-secondary">Logout</a>
     <div>
       <h1 name='userna' ><%= user.username %></h1>
@@ -16,10 +15,9 @@
         <p class="date"><%= items.date %></p>
         <p class="username"><%= items.username %></p>
         <p class="content"><%= items.blog_cont %></p>
-        </div>
-      <% }) %>
       </div>
-    </div>
+      <% }) %>
+      
   </div>
 </body>
 </html>

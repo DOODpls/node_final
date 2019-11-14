@@ -31,7 +31,7 @@ input {
   width: 190px;
 }
 .inner-container{
-  margin-top: 100px;
+  padding-top: 100px;
 }
 .blog-container{
   padding: 20px;

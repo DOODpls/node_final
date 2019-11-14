@@ -2,7 +2,7 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 @import url('./template.css');
 .main-cont{
-  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .form-container{
   width: 60vw;
@@ -30,9 +30,7 @@ input {
   box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
   width: 190px;
 }
-.inner-container{
-  margin-top: 100px;
-}
+
 .blog-container{
   padding: 20px;
   height: auto;

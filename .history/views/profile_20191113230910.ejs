@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include partials/header %>
+<body>
+  <div class="main-cont">
+      <a href="/" class="btn btn-secondary">Logout</a>
+    <div>
+      <h1 name='userna' ><%= user.username %></h1>
+    </div>
+    <a href="/profile/newblog"><button>NEW BLOG</button></a>
+    <div>
+      <% usrblg.forEach(function(items){ %>
+        <dd><%= items.title %></dd>
+        <dd><%= items.date %></dd>
+        <dt><%= items.username %></dt>
+        <dd><%= items.blog_cont %></dd>
+      <% }) %>
+      </div>
+  </div>
+</body>
+</html>

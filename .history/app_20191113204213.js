@@ -7,6 +7,7 @@ const flash = require('connect-flash')
 const session = require('express-session')
 const regroutr = require('./routes/regRoutes');
 const logroutr = require('./routes/logRoutes');
+const introutr = require('./routes/internalroutes')
 const passport = require('passport');
 const app = express();
 
@@ -37,35 +38,11 @@ app.use(passport.session());
 app.use(flash());
 
 app.use('/', require('./routes/index.js'));
-app.use('/profile/newblog', require('./routes/index.js'));
+
 app.use('/registered', regroutr);
 // regroutr.get('/profile', (req, res) => res.render('profile'));
 app.use('/profile', logroutr);
-
-const blgschema = require('./models/blogschema');
-
-app.post('/profile/sucess', function(request, response){
-  
-  const usern = request.user.username
-  const title = request.body.title;
-  const dated = request.body.date;
-  const contnet = request.body.blogcont;
-
-  const newpost = new blgschema(
-    {
-      username: usern,
-      date: dated,
-      title: title,
-      blog_cont: contnet 
-    }
-  );
-
-  newpost.save(function (err, newpost){
-    console.log('saved tp db')
-    response.render('sucess')
-  })
-})
-
+app.use('/profile', require('./routes/index.js'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(function (err, response) {

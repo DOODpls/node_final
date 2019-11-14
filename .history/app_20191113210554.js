@@ -44,9 +44,9 @@ app.use('/profile', logroutr);
 
 const blgschema = require('./models/blogschema');
 
-app.post('/profile/sucess', function(request, response){
+app.post('/', function(request, response){
   
-  const usern = request.user.username
+  const usern = 'sdfsdfds'
   const title = request.body.title;
   const dated = request.body.date;
   const contnet = request.body.blogcont;
