@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include partials/header %>
+<body>
+  <div class="main-cont">
+    <form class="form-container" method="POST">
+      <div class="inputcont">
+        <p>Title</p>
+        <input type="text" name="title" id="title" required>
+      </div>
+      <div class="inputcont">
+        <p>Date Today</p>
+        <input type="date" name="date" id="date">
+      </div>
+      <div class="inputcont">
+        <p>Blog Content</p>
+        <textarea rows="5" cols="50" name="blogcont" id="blogcont"></textarea>
+      </div>
+      <div class="inputcont">
+        <input type="submit" formaction="/profile/sucess">
+      </div>
+      <div class="inputcont">
+          <a href="/profile"><button>Cancel</button></a>
+        </div>
+    </form>
+  </div>
+    
+</body>
+</html>
