@@ -31,11 +31,7 @@ const pagesInfo = {
   },
   deleted: {
     title: "Deleted",
-    csslk: "/css/loading.css"
-  },
-  sucess: {
-    title: "Blog Added",
-    csslk: "/css/loading.css"
+    csslk: ""
   }
 }
 

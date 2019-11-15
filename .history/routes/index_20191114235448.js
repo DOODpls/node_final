@@ -40,6 +40,7 @@ pgroutr.get('/profile/:slug/deleted', ensureAuthenticated, async function(req, r
     if (err) return handleError(err);
     res.render('deleted', pages.deleted);
   });
+  res.render('deleted', pages.deleted);
 });
 
 pgroutr.get('/profile', ensureAuthenticated, async function(req, res){

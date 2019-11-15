@@ -1,0 +1,21 @@
+@import url('./template.css');
+
+.loading{
+  height: 170px;
+  width: 170px;
+  background-image: url('../images/Spinner-0.5s-200px\ \(2\).gif');
+}
+
+body{
+  background-color: black;
+  color: white;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+
+.loading-holder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

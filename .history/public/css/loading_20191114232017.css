@@ -1,0 +1,9 @@
+.loading{
+  height: 170px;
+  width: 170px;
+  background-image: url('../images/Spinner-0.5s-200px\ \(2\).gif');
+}
+
+body{
+  background-color: black;
+}

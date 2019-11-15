@@ -36,10 +36,8 @@ pgroutr.get('/newblog', ensureAuthenticated, function(req, res){
 
 pgroutr.get('/profile/:slug/deleted', ensureAuthenticated, async function(req, res){
   const deleted = await blgschema.find({slug: req.params.slug});
-  blgschema.deleteOne({ _id: deleted[0]._id }, function (err) {
-    if (err) return handleError(err);
-    res.render('deleted', pages.deleted);
-  });
+  console.log(deleted)
+  res.render('deleted', pages.deleted);
 });
 
 pgroutr.get('/profile', ensureAuthenticated, async function(req, res){
@@ -58,21 +56,7 @@ pgroutr.post('/newblog/sucess', function(request, response){
 
   // var uniqueSlug = require('unique-slug')
   // var randomSlug = uniqueSlug()
-
-  function slugify(string) {
-  const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
-  const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
-  const p = new RegExp(a.split('').join('|'), 'g')
-
-  return string.toString().toLowerCase()
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
-    .replace(/^-+/, '') // Trim - from start of text
-    .replace(/-+$/, '') // Trim - from end of text
-}
+  var slugify = require('slugify')
  
   const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
   let current_datetime = new Date()
@@ -90,7 +74,7 @@ pgroutr.post('/newblog/sucess', function(request, response){
 
   newpost.save(function (err, newpost){
     console.log('saved tp db')
-    response.render('sucess', pages.sucess)
+    response.render('sucess')
   })
 })
 
