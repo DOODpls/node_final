@@ -69,7 +69,7 @@ pgroutr.post('/newblog/sucess', function(request, response){
   // var uniqueSlug = require('unique-slug')
   // var randomSlug = uniqueSlug()
 
-  function slugify(string) { //https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
+  function slugify(string) {
   const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
   const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
   const p = new RegExp(a.split('').join('|'), 'g')
@@ -83,14 +83,14 @@ pgroutr.post('/newblog/sucess', function(request, response){
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, '') // Trim - from end of text
 }
-  const datenow = moment().format('LL'); //this is from momentjs hehe
+  const datenow = moment().format('LL');
   const newpost = new blgschema(
     {
-      username: usern, //saves the blog with username so itll be filtered out when logginto own profile
+      username: usern,
       date: datenow,
       title: title,
       blog_cont: contnet,
-      slug: slugify(title) // this is where the slugg goes
+      slug: slugify(title)
     }
   );
   newpost.save(function (err, newpost){

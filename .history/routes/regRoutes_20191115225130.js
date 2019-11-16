@@ -56,6 +56,35 @@ pgroutr.post('/', function(request, response){
 })
   
 
+// pgroutr.post('/', function(request, response){
+//   const { name, email, passw, passw2 } = request.body;
+//   let error =[];
+
+//   if(!name || !mail || !passw || !passw2){
+//     error.push({msg: "Please fill all fields"});
+//   }
+
+//   if(passw !== passw2){
+//     error.push({msg: 'Password do not match'});
+//   }
+
+//   if(passw.length < 8){
+//     error.push({ msg: 'Password must be atleast 6 characters'});
+//   }
+
+//   if(error.length > 0){
+//      response.render('registered', {
+//       error,
+//       name,
+//       email,
+//       passw,
+//       passw2
+//     })
+//   } else {
+    
+//   }
+// })
+  
 
 
 module.exports = pgroutr;

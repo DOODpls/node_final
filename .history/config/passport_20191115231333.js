@@ -16,7 +16,7 @@ module.exports = function(passport){
         bcrypt.compare(password, user.password, (err, isMatch) => { //it compares the hashed password from database
           if(err) throw err;
           if(isMatch){
-            return done(null, user); //everything here is from traversy
+            return done(null, user);
           } else {
             return done(null, false);
           }

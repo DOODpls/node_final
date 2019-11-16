@@ -22,4 +22,4 @@ const users = [
   }
 ];
 
-module.exports = users; //for db rebuild if deleted
+module.exports = users;
