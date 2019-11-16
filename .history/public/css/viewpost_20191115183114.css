@@ -1,0 +1,36 @@
+@import url('./template.css');
+body{
+  background-color: black;
+  color: white;
+  font-family: 'Share Tech Mono', monospace;
+}
+h1{
+  font-size: 40px;
+}
+.main-cont{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+  color: white;
+  background-image: none;
+}
+.blog-container{
+  width: 600px;
+  height: auto;
+}
+.form-container{
+  width: 60vw;
+}
+/* custom styles */
+label {
+  display: block;
+}
+.blog-container{
+  padding: 20px;
+  height: auto;
+  width: 400px;
+  border: 1px solid white;
+  margin: 20px;
+  border-radius: 25px;
+}

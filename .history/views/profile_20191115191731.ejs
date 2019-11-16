@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include partials/header %>
+<body>
+  <div class="main-cont">
+    <div class="inner-container">
+    <div>
+      <div>
+        <h1 name='userna' ><%= user.username %></h1>
+      </div>
+      <div class="buttons">
+        <a href="/" class="btn btn-secondary">Logout</a>
+        <a href="/newblog" class="btn btn-secondary">NEW BLOG</a>
+      </div>
+    </div>
+    
+    <div class="blogs-handler">
+      <div class="blog-tiler">
+        <% usrblg.slice().reverse().forEach(function(items){ %>
+          <div class="blog-container">
+          <h1 class="title"><%= items.title %></h1>
+          <p class="date"><%= items.date %></p>
+          <p class="username">By: <%= items.username %></p>
+          <!-- <p class="content"><%= items.blog_cont %></p> -->
+          <a href="/profile/<%= items.slug %>">Read Blog</a>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+    </div>
+  </div>
+</body>
+</html>

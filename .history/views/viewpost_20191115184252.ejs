@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include partials/header %>
+<body>
+  <div class="main-cont">
+    <div class="blog-container">
+      <h1 class="title"><%= blog.title %></h1>
+      <p class="date"><%= blog.date %></p>
+      <p class="username"><%= blog.username %></p>
+      <br>
+      <p class="content" align="justify"><%= blog.blog_cont %></p>
+      <a href="/profile/<%= blog.slug %>/deleted"><button>Delete</button></a>
+      <a href="/profile"><button>Go Back</button></a>
+    </div>
+  </div>
+</body>
+</html>

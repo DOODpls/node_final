@@ -1,0 +1,18 @@
+@import url('./template.css');
+body{
+  background-color: black;
+  color: white;
+  font-family: 'Share Tech Mono', monospace;
+  height: auto;
+}
+h1{
+  font-size: 40px;
+}
+.main-cont{
+  background-image: none;
+  height: 100vh;
+}
+.blog-container{
+  width: 600px;
+  height: auto;
+}

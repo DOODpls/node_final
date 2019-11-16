@@ -1,0 +1,19 @@
+
+body{
+  background-color: black;
+  color: white;
+  font-family: 'Share Tech Mono', monospace;
+}
+h1{
+  font-size: 40px;
+}
+.main-cont{
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  height: 100vh;
+  color: white;
+}
+.blog-container{
+  width: 600px;
+}
