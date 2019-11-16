@@ -34,17 +34,15 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-//~~~~~~~~~~~~~~~~~~~~~~~~Routes being called~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 app.use('/', require('./routes/index.js'));
-app.use('/profile/newblog', require('./routes/index.js')); 
+app.use('/profile/newblog', require('./routes/index.js'));
 app.use('/profile/:slug', require('./routes/index.js'));
 app.use('/profile/:slug/deleted', require('./routes/index.js'));
 app.use('/newblog/sucess', require('./routes/index.js'));
 app.use('/registered', regroutr);
 // regroutr.get('/profile', (req, res) => res.render('profile'));
 app.use('/profile', logroutr);
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
+
 
 app.use(express.static(path.join(__dirname, 'public')));
 

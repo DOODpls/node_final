@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const blggschema = new mongoose.Schema(
+const blogschema = new mongoose.Schema(
   {
     username: {
       type: String,
@@ -16,11 +16,15 @@ const blggschema = new mongoose.Schema(
     blog_cont: {
       type: String,
       required: true
+    },
+    slug: {
+      type: String,
+      required: true
     }
   }
 );
 
 
-const blggschema = mongoose.model('blogList', blogschema);
+const blogschemas = mongoose.model('bloglist', blogschema);
 
-module.exports = blogschema;
+module.exports = blogschemas;

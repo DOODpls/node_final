@@ -16,11 +16,15 @@ const blogschema = new mongoose.Schema(
     blog_cont: {
       type: String,
       required: true
+    },
+    slug: {
+      type: String,
+      required: true
     }
   }
 );
 
 
-const userschema = mongoose.model('users', userschemas);
+const blogschemas = mongoose.model('bloglists', blogschema);
 
-module.exports = userschema;
+module.exports = blogschemas;
