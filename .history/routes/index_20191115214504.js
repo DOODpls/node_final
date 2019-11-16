@@ -9,10 +9,6 @@ pgroutr.get('/',forwardAuthenticated ,function(req, res){
 res.render('index', pages.index);
 })
 
-pgroutr.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/')
-})
 
 pgroutr.get('/profile', ensureAuthenticated, async function(req, res){
   const blogl = await blgschema.find({username: req.user.username});
