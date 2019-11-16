@@ -10,12 +10,10 @@ let regist = document.querySelector('#regist');
 let name = document.querySelector('#name');
 let emailreg = document.querySelector('#emailreg');
 
-
-
 loginst.disabled = true;
 regist.disabled = false;
 
-function same(){ //if the password is either doenst match or less than 8 chaaracters it is disabled
+function same(){
   if (password.value != reppas.value){
     subreg.className = 'subreg2'
     subreg.disabled = true;
