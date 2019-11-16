@@ -21,8 +21,8 @@ pgroutr.get('/profile', ensureAuthenticated, async function(req, res){
 
 pgroutr.get('/profile/:slug', ensureAuthenticated, async function(req, res, err){
   const blogpost = await blgschema
-  .where('username', req.user.username)
-  .where('slug', req.params.slug);
+  .where('username', 'floydsantos');
+  console.log(blogpost);
   if(blogpost.length == 0){
     res.render('notfound', pages.notfound)
   }else{

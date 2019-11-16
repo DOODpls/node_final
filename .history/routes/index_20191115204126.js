@@ -20,9 +20,7 @@ pgroutr.get('/profile', ensureAuthenticated, async function(req, res){
 });
 
 pgroutr.get('/profile/:slug', ensureAuthenticated, async function(req, res, err){
-  const blogpost = await blgschema
-  .where('username', req.user.username)
-  .where('slug', req.params.slug);
+  const blogpost = await blgschema.find({slug: req.params.slug} && {username: req.params.username});
   if(blogpost.length == 0){
     res.render('notfound', pages.notfound)
   }else{

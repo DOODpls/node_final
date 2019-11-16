@@ -19,10 +19,12 @@ pgroutr.get('/profile', ensureAuthenticated, async function(req, res){
   })
 });
 
-pgroutr.get('/profile/:slug', ensureAuthenticated, async function(req, res, err){
-  const blogpost = await blgschema
-  .where('username', req.user.username)
-  .where('slug', req.params.slug);
+pgroutr.get('/profile/:slug', ensureAuthenticated, function(req, res, err){
+  const username1 = req.params.username;
+  const slug1 = req.params.slug;
+  const blogpost = blgschema
+  .where('username', username1);
+  console.log(blogpost);
   if(blogpost.length == 0){
     res.render('notfound', pages.notfound)
   }else{
