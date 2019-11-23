@@ -49,7 +49,45 @@ fieldset{
     font-size: 25vw;
   }
 }
+/* .bannern{
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 100px;
+  color: #fff;
+  -webkit-animation: flicker 1s linear infinite;
+  -moz-animation: flicker 1s linear infinite;
+  animation: flicker 1s linear infinite;
+}
+@keyframes flicker {
+	0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+		text-shadow: 0 0 0px #fff, 0 0 5px #fff, 0 0 5px #fff, 0 0 10px #0045c5, 0 0 10px #0045c5, 0 0 10px #0045c5, 0 0 10px #0045c5, 0 0 10px #0045c5;
+    opacity: .50;
+		
+	}
+	20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+		opacity: 0.4;
+	}
+}
+.banner{
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 100px;
+  color: #fff;
+  -webkit-animation: neon1 1.5s ease-in-out infinite alternate;
+  -moz-animation: neon1 1.5s ease-in-out infinite alternate;
+  animation: neon1 1.5s ease-in-out infinite alternate;
+}
 
+@-webkit-keyframes neon1 {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #0045c5, 0 0 70px #0045c5, 0 0 80px #0045c5, 0 0 100px #0045c5, 0 0 150px #0045c5;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #0045c5, 0 0 35px #0045c5, 0 0 40px #0045c5, 0 0 50px #0045c5, 0 0 75px #0045c5;
+  }
+} */
+.main-cont{
+  margin-top: 20px;
+  justify-content: space-evenly;
+}
 .login{
   display: none;
   transition: 2s;
@@ -71,7 +109,7 @@ fieldset{
   color: rgba(255, 255, 255, 0.568);
 }
 body {
-  background: rgb(0, 0, 0);
+  background: #333;
 }
 .submitdiv{
   margin: auto;
@@ -152,7 +190,7 @@ input {
 input:valid ~ label {
   top: 0;
   font-family: 'Saira', sans-serif;
-  color: rgba(185, 34, 34, 0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 input:focus {
   outline: none;

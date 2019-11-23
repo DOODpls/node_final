@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body{
-  overflow-y: scroll;
+  overflow: scroll;
   background-color: black;
 }
 .main-cont{
@@ -22,5 +22,5 @@ body{
   align-items: center;
   flex-direction: column;
   background-color: rgb(0, 0, 0);
-  box-shadow: 0 0 20px 20px rgb(0, 0, 0) inset;
+  box-shadow: 0 0 -8px 8px white inset;
 }

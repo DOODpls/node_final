@@ -11,10 +11,9 @@ body{
 }
 .main-cont{
   background-image: url(../images/bernard-hermant-t4DuoDHjxrQ-unsplash.jpg);
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
+  background-repeat: repeat;
   width: 100vw;
   height: 100vh;
   max-width:100%;

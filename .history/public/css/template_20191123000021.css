@@ -6,8 +6,7 @@
   box-sizing: border-box;
 }
 body{
-  overflow-y: scroll;
-  background-color: black;
+  overflow: scroll;
 }
 .main-cont{
   background-image: url(../images/bernard-hermant-t4DuoDHjxrQ-unsplash.jpg);
@@ -19,8 +18,8 @@ body{
   height: 100vh;
   max-width:100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: rgb(0, 0, 0);
-  box-shadow: 0 0 20px 20px rgb(0, 0, 0) inset;
 }

@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body{
-  overflow-y: scroll;
+  overflow: scroll;
   background-color: black;
 }
 .main-cont{

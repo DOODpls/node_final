@@ -71,7 +71,7 @@ fieldset{
   color: rgba(255, 255, 255, 0.568);
 }
 body {
-  background: rgb(0, 0, 0);
+  background: #333;
 }
 .submitdiv{
   margin: auto;
