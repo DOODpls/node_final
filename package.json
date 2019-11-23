@@ -1,6 +1,9 @@
 {
   "name": "assignment3",
-  "version": "1.0.0",
+  "version": "1.0.0", 
+  "engines": { 
+      "node": "v10.17.0" 
+   },
   "description": "",
   "main": "app.js",
   "scripts": {
