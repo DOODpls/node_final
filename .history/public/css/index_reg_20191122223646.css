@@ -101,8 +101,10 @@ fieldset{
   transition: 2s;
 }
 .regbutt{
-  font-family: 'Share Tech Mono', monospace;
-  color: rgba(255, 255, 255, 0.568);
+  color: white;
+}
+.logbutt{
+  color: white;
 }
 body {
   background: #333;
@@ -134,7 +136,6 @@ body {
   font-family: 'Share Tech Mono', monospace;
   color: rgba(255, 255, 255, 0.568);
 }
-
 .checkboxdiv{
   top: 30px;
   width: 100%;

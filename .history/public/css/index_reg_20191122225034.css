@@ -104,6 +104,9 @@ fieldset{
   font-family: 'Share Tech Mono', monospace;
   color: rgba(255, 255, 255, 0.568);
 }
+.logbutt{
+  color: white;
+}
 body {
   background: #333;
 }
