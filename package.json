@@ -12,7 +12,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrpyt": "^3.0.6",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.3.1",
     "connect-flash": "^0.1.1",
