@@ -1,0 +1,105 @@
+const express = require('express');
+const pgroutr = express.Router();
+const pages = require('../pages');
+const blgschema = require('../models/blogschema');
+var moment = require('moment');
+const { ensureAuthenticated, forwardAuthenticated } = require('../config/auth');
+
+pgroutr.get('/',forwardAuthenticated ,function(req, res){
+res.render('index', pages.index); // Node.js With Passport Authentication | Full Project // i think its when you go to / while logged in, itll just check if youre authenticated if you are, youll go to /profile
+})
+
+pgroutr.get('/logout', function(req, res){ // logout button has url of /logout which will trigger this and will remove the passport session and redirect you to / address
+  req.logout();
+  res.redirect('/')
+})
+
+pgroutr.get('/profile', ensureAuthenticated, async function(req, res){
+  const blogl = await blgschema //it renders the profile with the username you have on the bloglist
+  res.render('profile', {
+    usrblg: blogl,
+    user: req.user,
+    title: pages.profile.title,
+    csslk: pages.profile.csslk
+  })
+});
+
+pgroutr.get('/profile/:slug', ensureAuthenticated, async function(req, res, err){
+  const blogpost = await blgschema  // did this so 2 or more different users with same blog title/slug wont cross-view with different accounts when read more is clicked
+  .where('username', req.user.username) 
+  .where('slug', req.params.slug);
+  if(blogpost.length == 0){
+    res.render('notfound', pages.notfound)
+  }else{
+    res.render('viewpost', {
+    blog: blogpost[0],
+    title: blogpost[0].title,
+    csslk: pages.viewpost.csslk
+  })
+  }
+  
+});
+
+pgroutr.get('/newblog', ensureAuthenticated, function(req, res){
+  res.render('blog', pages.newblog); //routes you to /newblog which renders the blog.ejs
+});
+
+pgroutr.get('/profile/:slug/deleted', ensureAuthenticated, async function(req, res){
+  const deleted = await blgschema.find({slug: req.params.slug}); //i too the vurrent blog's id, and itll delete only that specific blog
+  blgschema.deleteOne({ _id: deleted[0]._id }, function (err) {
+    if (err) return handleError(err);
+    res.render('deleted', pages.deleted);
+  });
+});
+
+// pgroutr.get('/profile', ensureAuthenticated, async function(req, res){
+//   const blogpost = await blgschema.find({slug: req.params.slug}); 
+//   console.log(blogpost[0].title)
+//   res.render('viewpost', {
+//     blog: blogpost[0]
+//   })
+// });
+
+pgroutr.post('/newblog/sucess', function(request, response){
+  
+  const usern = request.user.username
+  const title = request.body.title;
+  const contnet = request.body.blogcont;
+
+  // var uniqueSlug = require('unique-slug')
+  // var randomSlug = uniqueSlug()
+
+  function slugify(string) { //https://medium.com/@mhagemann/the-ultimate-way-to-slugify-a-url-string-in-javascript-b8e4a0d849e1
+  const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
+  const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
+  const p = new RegExp(a.split('').join('|'), 'g')
+
+  return string.toString().toLowerCase()
+    .replace(/\s+/g, '-') // Replace spaces with -
+    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+    .replace(/&/g, '-and-') // Replace & with 'and'
+    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/^-+/, '') // Trim - from start of text
+    .replace(/-+$/, '') // Trim - from end of text
+}
+  const datenow = moment().format('LL'); //this is from momentjs hehe
+  const newpost = new blgschema(
+    {
+      username: usern, //saves the blog with username so itll be filtered out when logginto own profile
+      date: datenow,
+      title: title,
+      blog_cont: contnet,
+      slug: slugify(title) // this is where the slugg goes
+    }
+  );
+  newpost.save(function (err, newpost){
+    console.log('saved tp db')
+    response.render('sucess', pages.sucess)
+  })
+})
+
+
+
+
+module.exports = pgroutr;
